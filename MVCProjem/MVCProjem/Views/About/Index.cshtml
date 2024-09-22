@@ -1,0 +1,27 @@
+﻿@model List<EntityLayer.Concreate.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Hakkımda veri listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Hakkımda Başlığı</th>
+        <th>Aktif yap</th>
+        <th>pasif yap</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutID</td>
+            <td>Başlık</td>
+            <td><a href="#" class="btn btn-warning">Aktif yap</a></td>
+            <td><a href="#" class="btn btn-danger">PAsif yap</a></td>
+        </tr>
+    }
+</table>
+@Html.Action("AboutPartial", "About")
+
